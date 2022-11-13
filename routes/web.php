@@ -23,7 +23,19 @@ Route::get('/', function () {
 });
 
 Route::get('post/{post}', function ($slug) {
-    $post = Post::find($slug);
+    // base_path();
+    // app_path();
+    // resource_path();
+    $path = resource_path("posts/{$slug}.html");
+
+    if (! file_exists($path)) {
+        throw new ModelNotFoundException();
+        //ddd('file does not exist');
+        // return redirect('/');
+        //abort(404);
+    }
+
+    $post =  cache()->remember("posts.{$slug}", 5, fn() => file_get_contents($path));
 
     return view('post', [
         'post' => $post 
