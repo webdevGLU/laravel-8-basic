@@ -1,0 +1,22 @@
+body{
+    padding:0;
+    margin:0;
+    width:600px;
+    margin:0 auto;
+    
+}
+
+article{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom:20px;
+}
+
+article + article{
+    padding-top:20px;
+    
+    border-top:1px solid grey;
+}
+
+p{
+    line-height: 1.7;
+}
