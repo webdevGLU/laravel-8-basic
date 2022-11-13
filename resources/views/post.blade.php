@@ -9,9 +9,9 @@
 </head>
 <body>
     <article>
-        <h1>My First Blog</h1>
+        <h1><?= $post->title;?></h1>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore nemo recusandae possimus nihil dolorum odit incidunt veritatis? Voluptatum iure sapiente vitae magni reprehenderit officiis dolorum modi debitis repellat facere.
+            <?= $post->body;?>    
         </p>
     </article>
     <a href="/">Go back</a>
