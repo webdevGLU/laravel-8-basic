@@ -24,7 +24,7 @@ Route::get('/', function () {
 
     $posts = Post::all();
 
-    return view('posts',[
+    return view('posts', [
         'posts' => $posts
     ]);
 });
@@ -33,12 +33,10 @@ Route::get('post/{post}', function ($slug) {
     $post = Post::find($slug);
 
     return view('post', [
-        'post' => $post 
+        'post' => $post
     ]);
-})->where('post','[A-z_\-]+');//regular expression
+})->where('post', '[A-z_\-]+');//regular expression
 
 //->whereAlpha('post'); // alleen Hoofdletters en kleine letters
 //->whereAlphaNumeric('post'); //alle letters + cijfers
 //->whereNumber('post'); //alleeen cijfers
-
-
