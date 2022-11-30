@@ -30,12 +30,12 @@ Route::get('/', function () {
 });
 
 Route::get('post/{post}', function ($slug) {
-    $post = Post::find($slug);
+    $post = Post::findOrFail($slug);
 
     return view('post', [
         'post' => $post
     ]);
-})->where('post', '[A-z_\-]+');//regular expression
+});
 
 //->whereAlpha('post'); // alleen Hoofdletters en kleine letters
 //->whereAlphaNumeric('post'); //alle letters + cijfers

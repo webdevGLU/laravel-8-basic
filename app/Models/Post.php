@@ -58,4 +58,16 @@ class Post
     
         // return cache()->remember("posts.{$slug}", 5, fn() => file_get_contents($path));
     }
+
+    public static function findOrFail($slug)
+    {
+        $post =  static::find($slug);
+
+        if (!$post) {
+            throw new ModelNotFoundException();
+            # code...
+        }
+
+        return $post;
+    }
 }
