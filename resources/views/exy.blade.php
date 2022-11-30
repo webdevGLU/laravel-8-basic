@@ -8,6 +8,8 @@
     <title>Blog posts</title>
 </head>
 <body>
-    {{ $slot }}
+
+    @yield('content')
+    
 </body>
 </html>
